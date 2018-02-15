@@ -1,3 +1,6 @@
+#include <HID-Project.h>
+#include <HID-Settings.h>
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
@@ -24,7 +27,7 @@ void setup() {
   Serial1.begin(9600);
   lcd.init(); 
   lcd.backlight();
-  Media.begin();
+  Consumer.begin();
   System.begin();
 } 
 void loop() { 
@@ -35,37 +38,37 @@ void loop() {
   }
   if (ButtonPressed == 1) {
     switch (KeyID) {
-      case 100:  // если клавиша не  опознана или кокоието ошибки в шине при чтении
+      case 100:  // unknown key
         PrintKey("UNKNOWN key press");
         PrintCode(); 
       break;
       case 1: 
-        Media.write(MEDIA_VOLUME_UP);
+        Consumer.write(MEDIA_VOLUME_UP);
         PrintKey("VOL + key press");
         PrintCode(); 
       break;    
       case 2:
-        Media.write(MEDIA_VOLUME_DOWN);
+        Consumer.write(MEDIA_VOLUME_DOWN);
         PrintKey("VOL - key press");
         PrintCode(); 
       break;
       case 11:
-        Media.write(MEDIA_NEXT);
+        Consumer.write(MEDIA_NEXT);
         PrintKey("NEXT TRACK key press");
         PrintCode();  
       break;
       case 21:
-        Media.write(MEDIA_PREVIOUS);
+        Consumer.write(MEDIA_PREVIOUS);
         PrintKey("PREV TRACK key press");
         PrintCode(); 
       break;
       case 31:
-        Media.write(MEDIA_PLAY_PAUSE);
+        Consumer.write(MEDIA_PLAY_PAUSE);
         PrintKey("VOICE key press");
         PrintCode(); 
       break;
       case 41:
-        Media.write(MEDIA_BROWSER_BACK);
+        Consumer.write(CONSUMER_BROWSER_BACK);
         PrintKey("R/T key press");
         PrintCode(); 
       break;

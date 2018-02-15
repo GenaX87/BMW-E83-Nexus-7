@@ -5,3 +5,7 @@ Nexus 7 используется как компьютер в BMW X3 (E83) с у
 
 #### Фото
 ![BMW E83 Nexus 7](https://raw.github.com/phpscriptru/BMW-E83-Nexus-7/master/Foto.jpg)
+
+## Installation
+
+Unpack libraries to C:\Users\"some_user"\Documents\Arduino\libraries
